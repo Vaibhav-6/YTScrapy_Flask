@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+	<title>YTScrapy</title>
+	<style>
+		body{
+			background-image:linear-gradient(120deg, #28313b 0%, #485461 100%);
+		}
+		button{
+			font-size:50px;
+			font-size: 16px;
+			}
+		a{
+		color:white;
+		text-decoration:none;
+		}
+	</style>
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	
+	<div class="container-fluid">
+    <a class="navbar-brand" href="#" style="color:white;"><i class="fab fa-youtube-square" style="color:red;"></i> YTScrapy</a>
+	</div>
+  </nav>
+  <form action="/video" method="POST">
+	  <table class="table">
+	  <thead>
+		<tr>
+		  <th scope="col"style="color:white;">No.</th>
+		  <th scope="col"style="color:white;">Title</th>
+		  <th scope="col"style="color:white;">Link</th>
+		  <th scope="col"style="color:white;">Thumbails</th>
+		</tr>
+	  </thead>
+	  <tbody>
+	  	{% for i in range(title1 | length) %}
+		<tr>
+		  <th scope="row" style="color:white;">{{i}}</th>
+		  <td style="color:white;">{{title1[i]}}</td>.
+		  <td>
+			<button class="btn btn-warning" type="submit"><a href="/video{{url1[i]}}">Play</a></button><br><br>
+			<button class="btn btn-warning" type="submit"><a href="/download{{url1[i]}}">Download</a></button>
+		  </td>
+		  <td><img src={{thumbnail1[i]}}></img></td>
+		</tr>
+		{% endfor %}
+	  </tbody>
+	</table>
+	</form>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>
